@@ -1,0 +1,83 @@
+========================================
+After Effects MCP Server Setup Guide
+========================================
+
+QUICK START STEPS:
+==================
+
+1. INSTALL THE AFTER EFFECTS PLUGIN
+   - Right-click "install-ae-plugin.bat" and select "Run as administrator"
+   - OR enable Developer Mode in Windows Settings and run normally
+   - This only needs to be done ONCE
+
+2. START THE PROXY SERVER
+   - Double-click "start-proxy.bat"
+   - Keep this window open while using After Effects with Claude
+   - You'll see: "adb-mcp Command proxy server running on ws://localhost:3001"
+
+3. LAUNCH AFTER EFFECTS
+   - Open After Effects
+   - Go to: Window > Extensions > After Effects MCP Agent
+   - Click "Connect" in the plugin panel
+
+4. RESTART CLAUDE DESKTOP
+   - Close and reopen Claude Desktop
+   - The After Effects MCP server is already configured
+
+5. USE IN CLAUDE
+   - In Claude Desktop, click the "+" button
+   - Click "Add from Adobe After Effects"
+   - Select "config://get_instructions"
+   - Start working with After Effects!
+
+========================================
+
+TROUBLESHOOTING:
+================
+
+Plugin not appearing in After Effects:
+- Make sure you ran install-ae-plugin.bat as Administrator
+- Check that the symbolic link exists:
+  C:\Users\James Pollack\AppData\Roaming\Adobe\CEP\extensions\com.mikechambers.ae
+- Restart After Effects
+
+Plugin won't connect:
+- Make sure the proxy server is running (start-proxy.bat)
+- Check the proxy console for errors
+- Verify it shows: "adb-mcp Command proxy server running on ws://localhost:3001"
+
+Claude Desktop not showing After Effects:
+- Restart Claude Desktop
+- Check the config file exists:
+  C:\Users\James Pollack\AppData\Roaming\Claude\claude_desktop_config.json
+- Look for the "ae-mcp" entry in mcpServers
+
+========================================
+
+DAILY WORKFLOW:
+===============
+
+Each time you want to use After Effects with Claude:
+
+1. Run: start-proxy.bat (keep it running)
+2. Launch After Effects
+3. Window > Extensions > After Effects MCP Agent > Connect
+4. Use Claude Desktop normally
+
+========================================
+
+AVAILABLE FEATURES:
+===================
+
+The After Effects MCP provides:
+- Execute arbitrary ExtendScript code
+- Full access to After Effects API
+- Create compositions, layers, effects
+- Animate properties and keyframes
+- Work with footage and rendering
+- And much more via ExtendScript!
+
+For a full list of available functions, ask Claude:
+"What After Effects functions are available?"
+
+========================================
